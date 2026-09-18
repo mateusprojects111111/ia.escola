@@ -4,8 +4,6 @@ const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
-// 2. Lista de objetos contendo as perguntas e respostas
-const perguntas = [
 // 2. Lista de objetos contendo as perguntas e respostas adaptadas ao tema
 const perguntas = [
     {
@@ -47,7 +45,7 @@ const perguntas = [
             }
         ]
     }
-];
+]; // <--- CORREÇÃO: Colchete e ponto-e-vírgula que faltavam para fechar a array
 
 // 3. Variáveis de controle do estado do jogo
 let posicaoAtual = 0;
@@ -56,39 +54,39 @@ let historiaFinal = "";
 
 // 4. Função para exibir a pergunta atual na tela
 function mostraPergunta() {
-if (posicaoAtual >= perguntas.length) {
-exibeResultado();
-return;
-}
-perguntaAtual = perguntas[posicaoAtual];
-caixaPerguntas.textContent = perguntaAtual.enunciado;
-caixaAlternativas.textContent = "";
-mostraAlternativas();
+    if (posicaoAtual >= perguntas.length) {
+        exibeResultado();
+        return;
+    }
+    perguntaAtual = perguntas[posicaoAtual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = "";
+    mostraAlternativas();
 }
 
 // 5. Função para criar e desenhar os botões das escolhas
 function mostraAlternativas() {
-for (const alternativa of perguntaAtual.alternativas) {
-const botaoAlternativa = document.createElement("button");
-botaoAlternativa.textContent = alternativa.texto;
-// Adiciona evento de clique a cada botão
-botaoAlternativa.addEventListener("click", () => respostaSelecionada(alternativa));
-caixaAlternativas.appendChild(botaoAlternativa);
-}
+    for (const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativa = document.createElement("button");
+        botaoAlternativa.textContent = alternativa.texto;
+        // Adiciona evento de clique a cada botão
+        botaoAlternativa.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativa);
+    }
 }
 
 // 6. Função para processar a escolha feita pelo usuário
 function respostaSelecionada(opcaoSelecionada) {
-historiaFinal += opcaoSelecionada.afirmacao + " ";
-posicaoAtual++;
-mostraPergunta();
+    historiaFinal += opcaoSelecionada.afirmacao + " ";
+    posicaoAtual++;
+    mostraPergunta();
 }
 
 // 7. Função de conclusão (Condição de parada)
 function exibeResultado() {
-caixaPerguntas.textContent = "Fim da sua jornada!";
-caixaAlternativas.textContent = "";
-textoResultado.textContent = historiaFinal;
+    caixaPerguntas.textContent = "Fim da sua jornada!";
+    caixaAlternativas.textContent = "";
+    textoResultado.textContent = historiaFinal;
 }
 
 // Inicia a primeira pergunta quando a página carrega
