@@ -6,45 +6,47 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 // 2. Lista de objetos contendo as perguntas e respostas
 const perguntas = [
-{
-enunciado: "Assim que saiu da escola, você se depara com uma nova tecnologia: um chat de Inteligência Artificial. Qual o seu primeiro pensamento?",
-alternativas: [
-{
-texto: "Isso é assustador!",
-afirmacao: "No início, você teve receio das transformações promovidas pela IA."
-},
-{
-texto: "Isso é incrível!",
-afirmacao: "Você ficou entusiasmado com as possibilidades da IA desde o primeiro instante."
-}
-]
-},
-{
-enunciado: "Sua professora decide fazer uma aula prática sobre como a IA pode ajudar nos estudos. Como você age?",
-alternativas: [
-{
-texto: "Utiliza ferramentas de IA para gerar resumos e organizar ideias.",
-afirmacao: "Aprendeu a usar a tecnologia como uma aliada para otimizar suas tarefas diárias."
-},
-{
-texto: "Prefere fazer a pesquisa inteiramente sem o auxílio de IA.",
-afirmacao: "Optou por manter métodos tradicionais para garantir a originalidade do trabalho."
-}
-]
-},
-{
-enunciado: "Ao final da aula, a turma precisa debater o futuro da automação no trabalho. O que você defende?",
-alternativas: [
-{
-texto: "Defende que a IA criará novas profissões e oportunidades.",
-afirmacao: "Passou a enxergar a IA como uma ferramenta de evolução e inovação."
-},
-{
-texto: "Defende que devemos limitar o uso da IA para proteger os empregos atuais.",
-afirmacao: "Passou a defender a regulamentação rigorosa e o cuidado com os impactos sociais."
-}
-]
-}
+// 2. Lista de objetos contendo as perguntas e respostas adaptadas ao tema
+const perguntas = [
+    {
+        enunciado: "Em uma aula de Técnicas Computacionais, a professora apresenta como o algoritmo de um chat de Inteligência Artificial processa dados para responder perguntas. Qual é a sua primeira impressão?",
+        alternativas: [
+            {
+                texto: "Acho fascinante ver como a lógica de programação e a matemática conseguem simular o aprendizado.",
+                afirmacao: "Você percebeu o potencial das técnicas computacionais como ferramenta de inovação e aprendizado."
+            },
+            {
+                texto: "Fico preocupado sobre como esses modelos são treinados e a origem dos dados usados.",
+                afirmacao: "Sua reflexão inicial priorizou a ética e a transparência no uso dos dados pela IA."
+            }
+        ]
+    },
+    {
+        enunciado: "O desafio prático do dia é usar a Inteligência Artificial para ajudar a resolver um problema de lógica no código da escola. Como você decide utilizar essa ferramenta?",
+        alternativas: [
+            {
+                texto: "Uso a IA para entender os erros de lógica e pedir explicações passo a passo sobre o código.",
+                afirmacao: "Aprendeu a utilizar a IA como um tutor interativo para aprofundar seu conhecimento técnico."
+            },
+            {
+                texto: "Tento resolver o problema manualmente e uso a IA apenas para validar a solução final.",
+                afirmacao: "Preferiu fortalecer seu raciocínio lógico independente antes de recorrer à automação."
+            }
+        ]
+    },
+    {
+        enunciado: "Ao final do projeto, a turma debate os impactos das Técnicas Computacionais e da IA na rotina escolar do futuro. Qual posicionamento você defende?",
+        alternativas: [
+            {
+                texto: "A IA deve ser integrada aos métodos de ensino para personalizar os estudos de cada estudante.",
+                afirmacao: "Defendeu o uso transformador e personalizado da tecnologia na rotina pedagógica."
+            },
+            {
+                texto: "O uso da IA nas escolas deve ser moderado para não prejudicar o pensamento crítico autônomo.",
+                afirmacao: "Lutou pela preservação do pensamento autônomo e pelo uso consciente do conhecimento computacional."
+            }
+        ]
+    }
 ];
 
 // 3. Variáveis de controle do estado do jogo
